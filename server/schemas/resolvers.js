@@ -2,7 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Customer, Item, Location, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
-//create our resolvers
+//create resolvers
 const resolvers = {
     Query: {
         //Item.find() - get all items
