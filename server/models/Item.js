@@ -1,3 +1,3 @@
 const Item = {
-    quantity: 
+    quantity: Int
 }
