@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-// import ProductItem from '../ProductItem';
+import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_ITEMS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS } from '../../utils/queries';
+import { QUERY_ITEMS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
@@ -12,7 +12,7 @@ function ItemList() {
 
   const { currentCategory } = state;
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_ITEMS);
 
   useEffect(() => {
     if (data) {
@@ -33,13 +33,13 @@ function ItemList() {
     }
   }, [data, loading, dispatch]);
 
-  function filterProducts() {
+  function filterItems() {
     if (!currentCategory) {
-      return state.products;
+      return state.items;
     }
 
-    return state.products.filter(
-      (product) => product.category._id === currentCategory
+    return state.items.filter(
+      (item) => item.category._id === currentCategory
     );
   }
 
@@ -48,23 +48,23 @@ function ItemList() {
       <h2>Items Available:</h2>
       {state.products.length ? (
         <div className="flex-row">
-          {filterProducts().map((product) => (
+          {filterItems().map((item) => (
             <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
-              name={product.name}
-              size={product.size}
-              quantity={product.quantity}
+              key={item._id}
+              _id={item._id}
+              image={item.image}
+              name={item.name}
+              size={item.size}
+              quantity={item.quantity}
             />
           ))}
         </div>
       ) : (
-        <h3>You haven't added any products yet!</h3>
+        <h3>You haven't added any items yet!</h3>
       )}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
   );
 }
 
-export default ProductList;
+export default ItemList;

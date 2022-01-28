@@ -30,9 +30,9 @@ When the browser opens, you are greeted with the homepage.
 
 ![homepage](./client/images/homepage.png)
 
-New users need to sign up to be able to use the inventory management app.
+New users need to be added to be able to use the inventory management app.
 
-![sign up](./client/images/signup.png)
+![add user](./client/images/add-user.png)
 
 Returning users can login with their email and password.
 
