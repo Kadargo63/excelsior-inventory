@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const onHands = require('./OnHands');
 const {Schema} = mongoose;
 
 
@@ -14,16 +15,20 @@ const itemSchema = new  Schema({
     image: {
         type: String
     },
-    color: {
-        type: String
-    },
     quantity: {
         type: Number,
         min: 0,
     },
-    category: [{
-        type: String
-    }]
+    inStockQuantity: {
+        type: Number,
+        min: 0,
+    },
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: 'Category',
+      required: true
+    },
+    locations: [onHands.Schema]
 })
 
 const Item = mongoose.model('Item', itemSchema);

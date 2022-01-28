@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const {Schema} = mongoose;
-const Item = require('./Item')
+const onHands = require('./OnHands');
 
 
 const locationSchema = new  Schema({
@@ -9,9 +9,11 @@ const locationSchema = new  Schema({
         required: true,
         trim: true
     },
-    contents: [Item.Schema]
+    isCustomer: Boolean,
+    contents: [onHands.Schema]
 })
 
 const Location = mongoose.model('Location', locationSchema);
 
 module.exports = Location;
+
