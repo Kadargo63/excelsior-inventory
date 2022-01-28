@@ -98,9 +98,6 @@ const resolvers = {
             return await OnHands.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
         },
 
-        //delete on hand
-        
-        
         //login
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
