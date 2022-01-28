@@ -1,10 +1,6 @@
-const { Customer, Item, Location, User } = require('../models');
+const Item = require('./Item')
+const Customer = require('./Customer')
+const User = require('./User')
+const Location = require('./Location')
 
-const resolvers = {
-    Query: {
-
-
-    }
-}
-
-module.exports = resolvers;
+module.exports = { User, Item, Customer, Location };
