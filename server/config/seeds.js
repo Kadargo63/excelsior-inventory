@@ -22,8 +22,8 @@ db.once('open', async () => {
         description:
             'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
-        size: 100,
+        category: ['leotards'],
+        size: '100',
         quantity: 1
     },
     {
@@ -31,7 +31,7 @@ db.once('open', async () => {
         description:
             'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 110,
         quantity: 4
     },
@@ -40,7 +40,7 @@ db.once('open', async () => {
         description:
             'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 120,
         quantity: 4
     },
@@ -49,7 +49,7 @@ db.once('open', async () => {
         description:
             'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 140,
         quantity: 2
     },
@@ -58,7 +58,7 @@ db.once('open', async () => {
         description:
             'Blue top, black bottom, ruffled cap sleeves, black bow at neckline.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 150,
         quantity: 1
     },
@@ -67,7 +67,7 @@ db.once('open', async () => {
         description:
             'Long sleeve light blue leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 120,
         quantity: 5
     },
@@ -76,7 +76,7 @@ db.once('open', async () => {
         description:
             'Long sleeve light blue leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 130,
         quantity: 2
     },
@@ -85,7 +85,7 @@ db.once('open', async () => {
         description:
             'Green tank leotard with green skirt.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: XS,
         quantity: 6
     },
@@ -94,7 +94,7 @@ db.once('open', async () => {
         description:
             'Green tank leotard with green skirt.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: S,
         quantity: 2
     },
@@ -103,7 +103,7 @@ db.once('open', async () => {
         description:
             'Green tank leotard with green skirt.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: M,
         quantity: 2
     },
@@ -112,7 +112,7 @@ db.once('open', async () => {
         description:
             'Pink tank leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: XSC,
         quantity: 1
     },
@@ -121,7 +121,7 @@ db.once('open', async () => {
         description:
             'Pink tank leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: SC,
         quantity: 2
     },
@@ -130,7 +130,7 @@ db.once('open', async () => {
         description:
             'Purple tank leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: XSC,
         quantity: 2
     },
@@ -139,7 +139,7 @@ db.once('open', async () => {
         description:
             'Purple tank leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: S,
         quantity: 2
     },
@@ -148,7 +148,7 @@ db.once('open', async () => {
         description:
             'Black tank leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: XSC,
         quantity: 6
     },
@@ -157,7 +157,7 @@ db.once('open', async () => {
         description:
             'Black tank leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: SC,
         quantity: 2
     },
@@ -166,7 +166,7 @@ db.once('open', async () => {
         description:
             'Black Halter Biketard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: XSC,
         quantity: 0
     },
@@ -175,7 +175,7 @@ db.once('open', async () => {
         description:
             'Brown Halter Biketard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 6-7,
         quantity: 2
     },
@@ -184,7 +184,7 @@ db.once('open', async () => {
         description:
             'Brown Halter Biketard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 12-14,
         quantity: 5
     },
@@ -193,7 +193,7 @@ db.once('open', async () => {
         description:
             'Brown Halter Biketard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: S,
         quantity: 3
     },
@@ -202,7 +202,7 @@ db.once('open', async () => {
         description:
             'Brown Halter Biketard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: M,
         quantity: 1
     },
@@ -211,7 +211,7 @@ db.once('open', async () => {
         description:
             'Brown Halter Biketard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: L,
         quantity: 1
     },
@@ -220,7 +220,7 @@ db.once('open', async () => {
         description:
             'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: CS,
         quantity: 1
     },
@@ -229,7 +229,7 @@ db.once('open', async () => {
         description:
             'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: IC,
         quantity: 6
     },
@@ -238,7 +238,7 @@ db.once('open', async () => {
         description:
             'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: CM,
         quantity: 3
     },
@@ -247,7 +247,7 @@ db.once('open', async () => {
         description:
             'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: CL,
         quantity: 2
     },
@@ -256,7 +256,7 @@ db.once('open', async () => {
         description:
             'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: AS,
         quantity: 1
     },
@@ -265,7 +265,7 @@ db.once('open', async () => {
         description:
             'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: SC,
         quantity: 5
     },
@@ -274,7 +274,7 @@ db.once('open', async () => {
         description:
             'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: IC,
         quantity: 6
     },
@@ -283,7 +283,7 @@ db.once('open', async () => {
         description:
             'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: MC,
         quantity: 7
     },
@@ -292,7 +292,7 @@ db.once('open', async () => {
         description:
             'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: LC,
         quantity: 9
     },
@@ -301,7 +301,7 @@ db.once('open', async () => {
         description:
             'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: SA,
         quantity: 6
     },
@@ -310,7 +310,7 @@ db.once('open', async () => {
         description:
             'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: MA,
         quantity: 6
     },
@@ -319,7 +319,7 @@ db.once('open', async () => {
         description:
             'White spaghetti strap bra top.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: SC,
         quantity: 12
     },
@@ -328,7 +328,7 @@ db.once('open', async () => {
         description:
             'White spaghetti strap bra top.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: IC,
         quantity: 2
     },
@@ -337,7 +337,7 @@ db.once('open', async () => {
         description:
             'White spaghetti strap bra top.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: LC,
         quantity: 1
     },
@@ -346,7 +346,7 @@ db.once('open', async () => {
         description:
             'Red adult long sleep scooped neck leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards',],
         size: AM,
         quantity: 4
     },
@@ -355,7 +355,7 @@ db.once('open', async () => {
         description:
             'Red adult long sleep scooped neck leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: AL,
         quantity: 2
     },
@@ -364,7 +364,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: MC,
         quantity: 2
     },
@@ -373,7 +373,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: LC,
         quantity: 7
     },
@@ -382,7 +382,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: S,
         quantity: 4
     },
@@ -391,7 +391,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: M,
         quantity: 2
     },
@@ -400,7 +400,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: L,
         quantity: 1
     },
@@ -409,7 +409,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: XL,
         quantity: 1
     },
@@ -418,7 +418,7 @@ db.once('open', async () => {
         description:
             'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: P,
         quantity: 1
     },
@@ -427,7 +427,7 @@ db.once('open', async () => {
         description:
             'Child lavender spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: S,
         quantity: 5
     },
@@ -436,7 +436,7 @@ db.once('open', async () => {
         description:
             'Child lavender spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: I,
         quantity: 1
     },
@@ -445,7 +445,7 @@ db.once('open', async () => {
         description:
             'Child pink spaghetti strap leotard.',
         image: 'leotard.jpg',
-        location: locations[0]._id,
+        category: ['leotards'],
         size: 2-4,
         quantity: 3
     }
