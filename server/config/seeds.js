@@ -14,13 +14,20 @@ db.once('open', async () => {
 
   console.log('locations seeded');
 
+  await Customer.deleteMany();
+
+  const customers = await Customer.insertMany([
+    { name: 'Jane Smith' },
+    { items: 'Blue/Black Child Leotard' }
+  ]);
+
+  console.log('customers seeded');
+
   await Item.deleteMany();
 
   const items = await Item.insertMany([
     {
-        name: 'Blue/Black Child Leotard',
-        description:
-            'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
+        name: 'Blue/Black Child Leotard',        
         image: 'leotard.jpg',
         category: ['leotards'],
         size: '100',
@@ -28,425 +35,331 @@ db.once('open', async () => {
     },
     {
         name: 'Blue/Black Child Leotard',
-        description:
-            'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 110,
+        size: '110',
         quantity: 4
     },
     {
         name: 'Blue/Black Child Leotard',
-        description:
-            'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 120,
+        size: '120',
         quantity: 4
     },
     {
         name: 'Blue/Black Child Leotard',
-        description:
-            'Blue top, black bottom, ruffle sleeves, black bow at neckline.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 140,
+        size: '140',
         quantity: 2
     },
     {
         name: 'Blue/Black Child Leotard',
-        description:
-            'Blue top, black bottom, ruffled cap sleeves, black bow at neckline.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 150,
+        size: '150',
         quantity: 1
     },
     {
         name: 'Light Blue Long Sleeve Leotard',
-        description:
-            'Long sleeve light blue leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 120,
+        size: '120',
         quantity: 5
     },
     {
         name: 'Light Blue Long Sleeve Leotard',
-        description:
-            'Long sleeve light blue leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 130,
+        size: '130',
         quantity: 2
     },
     {
         name: 'Green Tank Leotard with Skirt',
-        description:
-            'Green tank leotard with green skirt.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: XS,
+        size: 'XS',
         quantity: 6
     },
     {
         name: 'Green Tank Leotard with Skirt',
-        description:
-            'Green tank leotard with green skirt.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: S,
+        size: 'S',
         quantity: 2
     },
     {
         name: 'Green Tank Leotard with Skirt',
-        description:
-            'Green tank leotard with green skirt.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: M,
+        size: 'M',
         quantity: 2
     },
     {
         name: 'Pink Tank Leotard',
-        description:
-            'Pink tank leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: XSC,
+        size: 'XSC',
         quantity: 1
     },
     {
         name: 'Pink Tank Leotard',
-        description:
-            'Pink tank leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: SC,
+        size: 'SC',
         quantity: 2
     },
     {
         name: 'Purple Tank Leotard',
-        description:
-            'Purple tank leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: XSC,
+        size: 'XSC',
         quantity: 2
     },
     {
         name: 'Purple Tank Leotard',
-        description:
-            'Purple tank leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: S,
+        size: 'S',
         quantity: 2
     },
     {
         name: 'Black Tank Leotard',
-        description:
-            'Black tank leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: XSC,
+        size: 'XSC',
         quantity: 6
     },
     {
         name: 'Black Tank Leotard',
-        description:
-            'Black tank leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: SC,
+        size: 'SC',
         quantity: 2
     },
     {
         name: 'Black Halter Biketard',
-        description:
-            'Black Halter Biketard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: XSC,
+        size: 'XSC',
         quantity: 0
     },
     {
         name: 'Brown Halter Biketard',
-        description:
-            'Brown Halter Biketard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 6-7,
+        size: '6-7',
         quantity: 2
     },
     {
         name: 'Brown Halter Biketard',
-        description:
-            'Brown Halter Biketard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 12-14,
+        size: '12-14',
         quantity: 5
     },
     {
         name: 'Brown Halter Biketard',
-        description:
-            'Brown Halter Biketard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: S,
+        size: 'S',
         quantity: 3
     },
     {
         name: 'Brown Halter Biketard',
-        description:
-            'Brown Halter Biketard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: M,
+        size: 'M',
         quantity: 1
     },
     {
         name: 'Brown Halter Biketard',
-        description:
-            'Brown Halter Biketard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: L,
+        size: 'L',
         quantity: 1
     },
     {
         name: 'White Scooped Neck Long Sleeve Leotard',
-        description:
-            'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: CS,
+        size: 'CS',
         quantity: 1
     },
     {
         name: 'White Scooped Neck Long Sleeve Leotard',
-        description:
-            'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: IC,
+        size: 'IC',
         quantity: 6
     },
     {
         name: 'White Scooped Neck Long Sleeve Leotard',
-        description:
-            'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: CM,
+        size: 'CM',
         quantity: 3
     },
     {
         name: 'White Scooped Neck Long Sleeve Leotard',
-        description:
-            'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: CL,
+        size: 'CL',
         quantity: 2
     },
     {
         name: 'White Scooped Neck Long Sleeve Leotard',
-        description:
-            'White scooped neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: AS,
+        size: 'AS',
         quantity: 1
     },
     {
         name: 'Black High Neck Long Sleeve Leotard',
-        description:
-            'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: SC,
+        size: 'SC',
         quantity: 5
     },
     {
         name: 'Black High Neck Long Sleeve Leotard',
-        description:
-            'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: IC,
+        size: 'IC',
         quantity: 6
     },
     {
         name: 'Black High Neck Long Sleeve Leotard',
-        description:
-            'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: MC,
+        size: 'MC',
         quantity: 7
     },
     {
         name: 'Black High Neck Long Sleeve Leotard',
-        description:
-            'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: LC,
+        size: 'LC',
         quantity: 9
     },
     {
         name: 'Black High Neck Long Sleeve Leotard',
-        description:
-            'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: SA,
+        size: 'SA',
         quantity: 6
     },
     {
         name: 'Black High Neck Long Sleeve Leotard',
-        description:
-            'Black high neck long sleeve leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: MA,
+        size: 'MA',
         quantity: 6
     },
     {
         name: 'White Spaghetti Strap Bra Top',
-        description:
-            'White spaghetti strap bra top.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: SC,
+        size: 'SC',
         quantity: 12
     },
     {
         name: 'White Spaghetti Strap Bra Top',
-        description:
-            'White spaghetti strap bra top.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: IC,
+        size: 'IC',
         quantity: 2
     },
     {
         name: 'White Spaghetti Strap Bra Top',
-        description:
-            'White spaghetti strap bra top.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: LC,
+        size: 'LC',
         quantity: 1
     },
     {
         name: 'Red Adult Long Sleeve Scooped Neck Leotard',
-        description:
-            'Red adult long sleep scooped neck leotard.',
         image: 'leotard.jpg',
         category: ['leotards',],
-        size: AM,
+        size: 'AM',
         quantity: 4
     },
     {
         name: 'Red Adult Long Sleeve Scooped Neck Leotard',
-        description:
-            'Red adult long sleep scooped neck leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: AL,
+        size: 'AL',
         quantity: 2
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: MC,
+        size: 'MC',
         quantity: 2
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: LC,
+        size: 'LC',
         quantity: 7
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: S,
+        size: 'S',
         quantity: 4
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: M,
+        size: 'M',
         quantity: 2
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: L,
+        size: 'L',
         quantity: 1
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: XL,
+        size: 'XL',
         quantity: 1
     },
     {
         name: 'Nude Spaghetti Strap Leotard',
-        description:
-            'Nude spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: P,
+        size: 'P',
         quantity: 1
     },
     {
         name: 'Child Lavender Spaghetti Strap Leotard',
-        description:
-            'Child lavender spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: S,
+        size: 'S',
         quantity: 5
     },
     {
         name: 'Child Lavender Spaghetti Strap Leotard',
-        description:
-            'Child lavender spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: I,
+        size: 'I',
         quantity: 1
     },
     {
         name: 'Child/Toddler Pink Spaghetti Strap Leotard',
-        description:
-            'Child pink spaghetti strap leotard.',
         image: 'leotard.jpg',
         category: ['leotards'],
-        size: 2-4,
+        size: '2-4',
         quantity: 3
     }
   ]);
