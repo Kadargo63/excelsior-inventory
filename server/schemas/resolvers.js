@@ -1,16 +1,18 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Customer, Item, Location, User } = require('../models');
+const { Item, Location, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 //create resolvers
 const resolvers = {
     Query: {
+        
         //categories
         categories: async () => {
             return await Category.find();
         },
-        //products
-        products: async (parent, { category, name }) => {
+
+        //items
+        items: async (parent, { category, name }) => {
             const params = {};
       
             if (category) {
@@ -23,12 +25,31 @@ const resolvers = {
               };
             }
       
-            return await Product.find(params).populate('category');
+            return await Item.find(params).populate('category');
         },
-        //product
-        product: async (parent, { _id }) => {
-            return await Product.findById(_id).populate('category');
+        
+        //item
+        item: async (parent, { _id }) => {
+            return await Item.findById(_id).populate('category');
         },
+
+        //items
+        onHands: async (parent, { category, name }) => {
+            const params = {};
+      
+            if (category) {
+              params.category = category;
+            }
+      
+            if (name) {
+              params.name = {
+                $regex: name
+              };
+            }
+      
+            return await onHands.find(params).populate('category');
+        },
+        
         //user
         user: async (parent, args, context) => {
             if (context.user) {
@@ -43,8 +64,8 @@ const resolvers = {
             }
       
             throw new AuthenticationError('Not logged in');
-        },
-        //inventory
+        }
+
     },
 
     Mutation: {
@@ -55,27 +76,30 @@ const resolvers = {
       
             return { token, user };
         },
-        //addInventory
-        addInventory: async (parent, args) => {
-            
 
+        //add item
+        addItem: async (parent, args) => {
+          const item = await Item.create(args);
+    
+          return { item };
+        },
 
+        //add location
+        addLocation: async (parent, args) => {
+          const location = await Location.create(args);
+        
+          return { location };
         },
-        //updateUser
-        updateUser: async (parent, args, context) => {
-            if (context.user) {
-              return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-            }
-      
-            throw new AuthenticationError('Not logged in');
-        },
-        //updateProduct
-        updateProduct: async (parent, { _id, quantity }) => {
+
+        //update on hand
+        updateOnHands: async (parent, { _id, quantity }) => {
             const decrement = Math.abs(quantity) * -1;
       
-            return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+            return await OnHands.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
         },
-        //updateInventory
+
+        //delete on hand
+        
         
         //login
         login: async (parent, { email, password }) => {
@@ -95,6 +119,7 @@ const resolvers = {
       
             return { token, user };
         }
+
     }
 }
 
