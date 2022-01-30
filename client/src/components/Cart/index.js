@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
+// import { idbPromise } from '../../utils/helpers';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 // import { useStoreContext } from '../../utils/GlobalState';
@@ -29,20 +29,20 @@ const Cart = () => {
     }
   }, [data]);
 
-  useEffect(() => {
-    async function getCart() {
-      const cart = await idbPromise('cart', 'get');
-      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
-    }
+  // useEffect(() => {
+  //   async function getCart() {
+  //     const cart = await idbPromise('cart', 'get');
+  //     dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+  //   }
 
-    if (!state.cart.length) {
-      getCart();
-    }
-  }, [state.cart.length, dispatch]);
+  //   if (!state.cart.length) {
+  //     getCart();
+  //   }
+  // }, [state.cart.length, dispatch]);
 
-  function toggleCart() {
-    dispatch({ type: TOGGLE_CART });
-  }
+  // function toggleCart() {
+  //   dispatch({ type: TOGGLE_CART });
+  // }
 
   // function calculateTotal() {
   //   let sum = 0;
@@ -68,7 +68,9 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
+      <div className="cart-closed" 
+      // onClick={toggleCart}
+      >
         <span role="img" aria-label="trash">
           🛒
         </span>
@@ -78,9 +80,9 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <div className="close" onClick={toggleCart}>
+      {/* <div className="close" onClick={toggleCart}>
         [close]
-      </div>
+      </div> */}
       <h2>Check Out</h2>
       {state.cart.length ? (
         <div>

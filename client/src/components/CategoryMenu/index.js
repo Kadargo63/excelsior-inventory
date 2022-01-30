@@ -6,7 +6,7 @@ import {
   UPDATE_CURRENT_CATEGORY,
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
+// import { idbPromise } from '../../utils/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 
 function CategoryMenu() {
@@ -26,17 +26,18 @@ function CategoryMenu() {
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories,
       });
-      categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
-      });
-    } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
-        dispatch({
-          type: UPDATE_CATEGORIES,
-          categories: categories,
-        });
-      });
-    }
+      // categoryData.categories.forEach((category) => {
+      //   idbPromise('categories', 'put', category);
+      // });
+    } 
+    // else if (!loading) {
+    //   idbPromise('categories', 'get').then((categories) => {
+    //     dispatch({
+    //       type: UPDATE_CATEGORIES,
+    //       categories: categories,
+    //     });
+    //   });
+    // }
   }, [categoryData, loading, dispatch]);
 
   const handleClick = (id) => {

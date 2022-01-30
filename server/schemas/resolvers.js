@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Item, Location, User } = require('../models');
+const { Product, Location, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 //create resolvers
@@ -12,7 +12,7 @@ const resolvers = {
         },
 
         //items
-        items: async (parent, { category, name }) => {
+        products: async (parent, { category, name }) => {
             const params = {};
       
             if (category) {
@@ -25,30 +25,14 @@ const resolvers = {
               };
             }
       
-            return await Item.find(params).populate('category');
+            return await Product.find(params).populate('category');
         },
         
         //item
-        item: async (parent, { _id }) => {
-            return await Item.findById(_id).populate('category');
+        product: async (parent, { _id }) => {
+            return await Product.findById(_id).populate('category');
         },
 
-        //items
-        onHands: async (parent, { category, name }) => {
-            const params = {};
-      
-            if (category) {
-              params.category = category;
-            }
-      
-            if (name) {
-              params.name = {
-                $regex: name
-              };
-            }
-      
-            return await onHands.find(params).populate('category');
-        },
         
         //user
         user: async (parent, args, context) => {
@@ -77,26 +61,26 @@ const resolvers = {
             return { token, user };
         },
 
-        //add item
-        addItem: async (parent, args) => {
-          const item = await Item.create(args);
+        // //add item
+        // addProduct: async (parent, args) => {
+        //   const item = await Product.create(args);
     
-          return { item };
-        },
+        //   return { item };
+        // },
 
         //add location
-        addLocation: async (parent, args) => {
-          const location = await Location.create(args);
+        // addLocation: async (parent, args) => {
+        //   const location = await Location.create(args);
         
-          return { location };
-        },
+        //   return { location };
+        // },
 
         //update on hand
-        updateOnHands: async (parent, { _id, quantity }) => {
-            const decrement = Math.abs(quantity) * -1;
+        // updateOnHands: async (parent, { _id, quantity }) => {
+        //     const decrement = Math.abs(quantity) * -1;
       
-            return await OnHands.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
-        },
+        //     return await OnHands.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+        // },
 
         //login
         login: async (parent, { email, password }) => {
