@@ -14,12 +14,12 @@ const typeDefs = gql`
     size: String
     quantity: Int
     category: Category
-    bin: ID
+    location: ID
   }
 
   type Onhands {
-      product: [Product]
-      location: [Location]
+      items: [Item]
+      location: ID
       quantity: Int
   }
 
@@ -41,9 +41,9 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    item(_id: ID!): Item
     items(category: ID, name: String): [Item]
-    onHands(location: ID, item: Items)
+    item(_id: ID!): Item
+    onHands(location: ID, item: ID): OnHands
     user: User
   }
 
