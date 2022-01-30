@@ -9,10 +9,9 @@ const typeDefs = gql`
   type Item {
     _id: ID
     name: String
-    description: String
     image: String
-    size: String
     quantity: Int
+    size: String
     category: Category
     location: ID
   }
@@ -32,6 +31,11 @@ const typeDefs = gql`
     _id: ID
     name: String
     email: String
+    orders: [Order]
+  }
+
+  type Checkout {
+    session: ID
   }
 
   type Auth {
@@ -45,6 +49,7 @@ const typeDefs = gql`
     item(_id: ID!): Item
     onHands(location: ID, item: ID): OnHands
     user: User
+<<<<<<< HEAD
   }
 
   type Mutation {
@@ -52,6 +57,17 @@ const typeDefs = gql`
     addItem(products: [ID]!): Item
     addLocation(products: [ID]!): Location
     updateOnHands(products: [ID]!): Item
+=======
+    order(_id: ID!): Order
+    checkout(products: [ID]!): Checkout
+  }
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addOrder(products: [ID]!): Order
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateProduct(_id: ID!, quantity: Int!): Product
+>>>>>>> feature/ri-typedefs
     login(email: String!, password: String!): Auth
   }
 `;
