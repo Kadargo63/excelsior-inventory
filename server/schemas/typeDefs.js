@@ -6,7 +6,7 @@ const typeDefs = gql`
     name: String
   }
 
-  type Product {
+  type Item {
     _id: ID
     name: String
     description: String
@@ -15,29 +15,22 @@ const typeDefs = gql`
     quantity: Int
     category: Category
     bin: ID
-    orderLink: String
-  }
-
-  type Inventory {
-    bins: [Bin]
-    onhand: [Onhands]
   }
 
   type Onhands {
       product: [Product]
+      location: [Location]
       quantity: Int
   }
 
-  type Bin {
+  type Location {
     _id: ID
-    lastBinnedDate: String
     products: [Product]
   }
 
   type User {
     _id: ID
-    firstName: String
-    lastName: String
+    name: String
     email: String
   }
 
@@ -48,18 +41,17 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
+    item(_id: ID!): Item
+    items(category: ID, name: String): [Item]
+    onHands(location: ID, item: Items)
     user: User
-    inventory(_id: ID!): Inventory
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addInventory(products: [ID]!): Inventory
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
-    updateInventory(products: [ID]): Inventory
+    addUser(name: String!, email: String!, password: String!): Auth
+    addItem(products: [ID]!): Item
+    addLocation(products: [ID]!): Location
+    updateOnHands(products: [ID]!): Item
     login(email: String!, password: String!): Auth
   }
 `;
