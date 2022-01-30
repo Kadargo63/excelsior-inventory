@@ -20,23 +20,23 @@ function CategoryMenu() {
     { name: 'Leotards',
     _id
     :
-    '61f6adab70bbb9579c0daeb3' },
+    '61f6fec31f7b5961fcbaabf1' },
     { name: 'Lyrical Dresses',
     _id
     :
-    '61f6adab70bbb9579c0daeb4' },
+    '61f6fec31f7b5961fcbaabf2' },
     { name: 'Tutu Dresses',
     _id
     :
-    '61f6adab70bbb9579c0daeb5' },
+    '61f6fec31f7b5961fcbaabf3' },
     { name: 'Skirts/Tutus',
     _id
     :
-    '61f6adab70bbb9579c0daeb6' },
+    '61f6fec31f7b5961fcbaabf4' },
     { name: 'Shoes',
     _id
     :
-    '61f6adab70bbb9579c0daeb7' }
+    '61f6fec31f7b5961fcbaabf5' }
   ];
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
