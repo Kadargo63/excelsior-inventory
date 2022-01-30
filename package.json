@@ -1,19 +1,35 @@
 {
-  "name": "dancemanagement",
+  "name": "dance-inventory",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.7.1",
+    "if-env": "^1.0.4",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kadargo63/excelsior-inventory.git"
+    "url": "git+https://github.com/jamwil1226/shop-shop-redux.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kadargo63/excelsior-inventory/issues"
+    "url": "https://github.com/jamwil1226/shop-shop-redux/issues"
   },
-  "homepage": "https://github.com/Kadargo63/excelsior-inventory#readme"
+  "homepage": "https://github.com/jamwil1226/shop-shop-redux#readme"
 }
