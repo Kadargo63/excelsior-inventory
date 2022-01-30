@@ -13,7 +13,6 @@ const typeDefs = gql`
     quantity: Int
     size: String
     category: Category
-    location: ID
   }
 
   type Onhands {
@@ -24,6 +23,7 @@ const typeDefs = gql`
 
   type Location {
     _id: ID
+    purchaseDate: String
     products: [Product]
   }
 
