@@ -6,39 +6,36 @@ const typeDefs = gql`
     name: String
   }
 
-  type Product {
+  type Item {
     _id: ID
     name: String
-    description: String
     image: String
-    size: String
     quantity: Int
+    size: String
     category: Category
-    bin: ID
-    orderLink: String
-  }
-
-  type Inventory {
-    bins: [Bin]
-    onhand: [Onhands]
+    location: ID
   }
 
   type Onhands {
-      product: [Product]
+      items: [Item]
+      location: ID
       quantity: Int
   }
 
-  type Bin {
+  type Location {
     _id: ID
-    lastBinnedDate: String
     products: [Product]
   }
 
   type User {
     _id: ID
-    firstName: String
-    lastName: String
+    name: String
     email: String
+    orders: [Order]
+  }
+
+  type Checkout {
+    session: ID
   }
 
   type Auth {
@@ -48,18 +45,29 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
+    items(category: ID, name: String): [Item]
+    item(_id: ID!): Item
+    onHands(location: ID, item: ID): OnHands
     user: User
-    inventory(_id: ID!): Inventory
+<<<<<<< HEAD
+  }
+
+  type Mutation {
+    addUser(name: String!, email: String!, password: String!): Auth
+    addItem(products: [ID]!): Item
+    addLocation(products: [ID]!): Location
+    updateOnHands(products: [ID]!): Item
+=======
+    order(_id: ID!): Order
+    checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addInventory(products: [ID]!): Inventory
+    addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
-    updateInventory(products: [ID]): Inventory
+>>>>>>> feature/ri-typedefs
     login(email: String!, password: String!): Auth
   }
 `;
