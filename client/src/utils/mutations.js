@@ -11,6 +11,14 @@ export const LOGIN = gql`
   }
 `
 
-export const MOVE_ITEMS = gql`
-  mutation moveItems()
+export const UPDATE_INVENTORY = gql`
+  mutation updateInventory($onHands: ID, $quantitiy: quantitiy) {
+      udateInventory(onHands: $onHands, quantity: $quantity) {
+          onHands {
+              bin_id
+              item_id
+              quantity
+          }
+      }
+  }
 `
