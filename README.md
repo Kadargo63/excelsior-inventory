@@ -59,7 +59,7 @@ This site is also mobile responsive!
 ## Future Development
 We are currently working on the ability for the client to use QR Codes to track the bins the items are located in.
 
-![QR Code option](./client/public/images/qr-codes.png)
+![QR Code option](./client/public/images/qr-code-revised.png)
 
 ## License
 The license for this project is the MIT.
