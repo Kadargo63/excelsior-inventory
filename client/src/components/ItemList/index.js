@@ -4,8 +4,8 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_ITEMS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner.gif';
+// import { idbPromise } from '../../utils/helpers';
+// import spinner from '../../assets/spinner.gif';
 
 function ItemList() {
   const [state, dispatch] = useStoreContext();
@@ -20,17 +20,18 @@ function ItemList() {
         type: UPDATE_ITEMS,
         items: data.items,
       });
-      data.items.forEach((items) => {
-        idbPromise('items', 'put', items);
-      });
-    } else if (!loading) {
-      idbPromise('items', 'get').then((items) => {
-        dispatch({
-          type: UPDATE_ITEMS,
-          items: items,
-        });
-      });
-    }
+      // data.items.forEach((items) => {
+      //   idbPromise('items', 'put', items);
+      // });
+    } 
+    // else if (!loading) {
+    //   idbPromise('items', 'get').then((items) => {
+    //     dispatch({
+    //       type: UPDATE_ITEMS,
+    //       items: items,
+    //     });
+    //   });
+    // }
   }, [data, loading, dispatch]);
 
   function filterItems() {
@@ -62,7 +63,7 @@ function ItemList() {
       ) : (
         <h3>You haven't added any items yet!</h3>
       )}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
     </div>
   );
 }

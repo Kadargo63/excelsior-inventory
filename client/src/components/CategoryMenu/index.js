@@ -16,7 +16,28 @@ function CategoryMenu() {
 
   const dispatch = useDispatch();
 
-  const { categories } = state;
+  const  categories  = [
+    { name: 'Leotards',
+    _id
+    :
+    '61f6fec31f7b5961fcbaabf1' },
+    { name: 'Lyrical Dresses',
+    _id
+    :
+    '61f6fec31f7b5961fcbaabf2' },
+    { name: 'Tutu Dresses',
+    _id
+    :
+    '61f6fec31f7b5961fcbaabf3' },
+    { name: 'Skirts/Tutus',
+    _id
+    :
+    '61f6fec31f7b5961fcbaabf4' },
+    { name: 'Shoes',
+    _id
+    :
+    '61f6fec31f7b5961fcbaabf5' }
+  ];
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
@@ -29,7 +50,8 @@ function CategoryMenu() {
       categoryData.categories.forEach((category) => {
         idbPromise('categories', 'put', category);
       });
-    } else if (!loading) {
+    } 
+    else if (!loading) {
       idbPromise('categories', 'get').then((categories) => {
         dispatch({
           type: UPDATE_CATEGORIES,

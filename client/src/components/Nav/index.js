@@ -26,7 +26,7 @@ function Nav() {
         <ul className="flex-row">
           <li className="mx-1">
             <Link to="/signup">
-              Signup
+              Add Approved User
             </Link>
           </li>
           <li className="mx-1">
