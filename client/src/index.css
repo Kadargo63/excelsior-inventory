@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
 :root {
   --primary: #76caf6;
-  --secondary: #8982ae;
+  --secondary: #8785c7;
   --tertiary: #989797;
   --light: white;
   --dark: black;
@@ -97,6 +99,8 @@ button {
   cursor: pointer;
   margin: 0 1px;
   background-color: var(--secondary);
+  font-family: 'Knewave';
+  text-transform: capitalize;
 }
 
 button:hover {
@@ -137,10 +141,36 @@ input:focus {
 }
 
 .container {
-  width: 85%;
+  width: 95%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  width:50%;
+  justify-content: center;
+}
+
+.right-column {
+  width: 50%
+}
+
+.jumbotron {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.jumbotron img {
+  width:100%;
+  height:100%
 }
 
 .flex-row {
@@ -206,6 +236,15 @@ input:focus {
 }
 
 @media screen and (max-width: 768px) {
+  .content {
+    flex-wrap: wrap;
+  }
+  .left-column {
+    width: 100%
+  }
+  .right-column {
+    width: 100%
+  }
   .card {
     width: 100%;
   }

@@ -17,26 +17,26 @@ function CategoryMenu() {
   const dispatch = useDispatch();
 
   const  categories  = [
-    { name: 'Leotards',
+    { name: 'LEOTARDS',
     _id
     :
-    '61f6fec31f7b5961fcbaabf1' },
-    { name: 'Lyrical Dresses',
+    '61f8501148d3e5301c9e5ae6' },
+    { name: 'LYRICAL DRESSES',
     _id
     :
-    '61f6fec31f7b5961fcbaabf2' },
-    { name: 'Tutu Dresses',
+    '61f8501148d3e5301c9e5ae7' },
+    { name: 'TUTU DRESSES',
     _id
     :
-    '61f6fec31f7b5961fcbaabf3' },
-    { name: 'Skirts/Tutus',
+    '61f8501148d3e5301c9e5ae8' },
+    { name: 'SKIRTS/TUTUS',
     _id
     :
-    '61f6fec31f7b5961fcbaabf4' },
-    { name: 'Shoes',
+    '61f8501148d3e5301c9e5ae9' },
+    { name: 'SHOES',
     _id
     :
-    '61f6fec31f7b5961fcbaabf5' }
+    '61f8501148d3e5301c9e5aea' }
   ];
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
