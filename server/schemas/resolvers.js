@@ -45,6 +45,13 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
+        //modify quantity
+        updateQuantity: async (parent, {_id, quantity}) => {
+          const product = await Product.findByIdAndUpdate(_id, {quantity: quantity})
+          return product;
+        },
+
         // //add item
         // addProduct: async (parent, args) => {
         //   const item = await Product.create(args);

@@ -49,3 +49,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const UPDATE_QUANTITY = gql`
+  mutation updateQuantity(
+    $_id: ID
+    $quantity: Int
+  ) {
+    updateQuantity(
+      quantity: $quantity
+    )
+  }
+`

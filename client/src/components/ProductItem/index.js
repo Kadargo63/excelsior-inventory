@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 // import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { UPDATE_QUANTITY } from "../../utils/mutations";
 import { idbPromise } from "../../utils/helpers";
 import { useDispatch, useSelector } from 'react-redux';
+import { useMutation } from '@apollo/client';
 
 function ProductItem(item) {
   const state = useSelector((state) => {
@@ -12,6 +14,8 @@ function ProductItem(item) {
   });
 
   const dispatch = useDispatch();
+
+  const [updateQuantity, {data}] = useMutation(UPDATE_QUANTITY)
 
   const {
     image,
@@ -44,6 +48,13 @@ function ProductItem(item) {
     }
   }
 
+  const increment = () => {
+    console.log(_id, quantity)
+        updateQuantity({ variables: { _id: _id, quantity: quantity + 1 } });
+  };
+  const decrement = () => {};
+  const deleteItem = () => {}
+
   return (
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
@@ -57,7 +68,7 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>{size}</span>
       </div>
-      <button onClick={addToCart}>Check In</button>
+      <button onClick={increment}>Check In</button>
       <button onClick={addToCart}>Check Out</button>
     </div>
   );
