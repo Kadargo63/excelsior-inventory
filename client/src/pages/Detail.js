@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import Cart from '../components/Cart';
+// import Cart from '../components/Cart';
 // import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -102,31 +102,36 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
+        <div className="detail">
+          <div clasName="detail-row">
           <Link to="/">← Back to Items</Link>
-
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p> 
+        </div>
+        <div className="detail-row">
+          <div>
             <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
-          />
-          </p>
-          <p>
-            <strong>Size:</strong>  {currentProduct.size}{' '} <br />
-            <strong>Quantity:</strong>  {currentProduct.quantity}{' '}
-          </p>
+          /></div>
+          <div>
+            <h2>{currentProduct.name}</h2>
+
+            <p>{currentProduct.description}</p>
+
+
+            <p>
+              <strong>Size:</strong>  {currentProduct.size}{' '} <br />
+              <strong>Quantity:</strong>  {currentProduct.quantity}{' '}
+            </p>
+          </div>
+        </div>
           <p>
             <button >Check In</button>
             <button >Check Out</button>            
             <button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
+            //disabled={!cart.find((p) => p._id === currentProduct._id)}
+            //onClick={removeFromCart}
             >
-              Add Back to Inventory
+              Delete
             </button>
           </p>
 
@@ -134,7 +139,6 @@ function Detail() {
         </div>
       ) : null}
       {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
-      <Cart />
     </>
   );
 }
