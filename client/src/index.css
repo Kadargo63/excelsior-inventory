@@ -90,14 +90,14 @@ header a {
 }
 
 button {
-  font-size: 1rem;
+  font-size: 2rem;
   text-decoration: none;
-  padding: 0.25rem 1rem;
+  padding: .25rem 1rem;
   border-radius: .5rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 5px 5px;
   background-color: var(--secondary);
   font-family: 'Knewave';
   text-transform: capitalize;
@@ -153,12 +153,16 @@ input:focus {
 }
 
 .left-column {
-  width:50%;
+  display: flex;
+  flex-direction: column;
+  width:40%;
   justify-content: center;
 }
 
 .right-column {
-  width: 50%
+  display: flex;
+  flex-direction: column;
+  width: 60%
 }
 
 .jumbotron {
@@ -171,6 +175,10 @@ input:focus {
 .jumbotron img {
   width:100%;
   height:100%
+}
+
+.category-menu {
+  align-items: center;
 }
 
 .flex-row {
