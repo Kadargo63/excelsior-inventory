@@ -1,21 +1,22 @@
-import React, {useEffect} from "react";
+//import React, {useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 // import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
-import { UPDATE_QUANTITY } from "../../utils/mutations";
-import { idbPromise } from "../../utils/helpers";
-import { useDispatch, useSelector } from 'react-redux';
-import { useMutation } from '@apollo/client';
+//import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+//import { UPDATE_QUANTITY } from "../../utils/mutations";
+//import { idbPromise } from "../../utils/helpers";
+// import { useDispatch, useSelector } from 'react-redux';
+//import { useMutation } from '@apollo/client';
 
 function ProductItem(item) {
-  const state = useSelector((state) => {
-    return state
-  });
+//const state = useSelector((state) => {
+//  return state
+//});
 
-  const dispatch = useDispatch();
+//const dispatch = useDispatch();
 
-  const [updateQuantity, {data}] = useMutation(UPDATE_QUANTITY)
+//const [updateQuantity, {data}] = useMutation(UPDATE_QUANTITY)
 
   const {
     image,
@@ -25,35 +26,35 @@ function ProductItem(item) {
     quantity
   } = item;
 
-  const { cart } = state
+//const { cart } = state
 
-  const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
-    if (itemInCart) {
-      dispatch({
-        type: UPDATE_CART_QUANTITY,
-        _id: _id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
-      });
-      idbPromise('cart', 'put', {
-        ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
-      });
-    } else {
-      dispatch({
-        type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1 }
-      });
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
-    }
-  }
+//const addToCart = () => {
+//  const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+//  if (itemInCart) {
+//    dispatch({
+//      type: UPDATE_CART_QUANTITY,
+//      _id: _id,
+//      purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+//    });
+//    idbPromise('cart', 'put', {
+//      ...itemInCart,
+//      purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+//    });
+//  } else {
+//    dispatch({
+//      type: ADD_TO_CART,
+//      product: { ...item, purchaseQuantity: 1 }
+//    });
+//    idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+//  }
+//}
 
-  const increment = () => {
-    console.log(_id, quantity)
-        updateQuantity({ variables: { _id: _id, quantity: quantity + 1 } });
-  };
-  const decrement = () => {};
-  const deleteItem = () => {}
+//const increment = () => {
+//  console.log(_id, quantity)
+//      updateQuantity({ variables: { _id: _id, quantity: quantity + 1 } });
+//};
+//const decrement = () => {};
+//const deleteItem = () => {}
 
   return (
     <div className="card px-1 py-1">
@@ -68,8 +69,6 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>{size}</span>
       </div>
-      <button onClick={increment}>Check In</button>
-      <button onClick={addToCart}>Check Out</button>
     </div>
   );
 }

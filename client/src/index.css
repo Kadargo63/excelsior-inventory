@@ -157,7 +157,6 @@ input:focus {
   display: flex;
   flex-direction: column;
   width:40%;
-  align-items: top;
 }
 
 .right-column {
@@ -236,7 +235,7 @@ input:focus {
 }
 
 .card {
-  width: 25%;
+  width: 33%;
   text-align: center;
 }
 
