@@ -16,28 +16,7 @@ function CategoryMenu() {
 
   const dispatch = useDispatch();
 
-  const  categories  = [
-    { name: 'LEOTARDS',
-    _id
-    :
-    '61f8501148d3e5301c9e5ae6' },
-    { name: 'LYRICAL DRESSES',
-    _id
-    :
-    '61f8501148d3e5301c9e5ae7' },
-    { name: 'TUTU DRESSES',
-    _id
-    :
-    '61f8501148d3e5301c9e5ae8' },
-    { name: 'SKIRTS/TUTUS',
-    _id
-    :
-    '61f8501148d3e5301c9e5ae9' },
-    { name: 'SHOES',
-    _id
-    :
-    '61f8501148d3e5301c9e5aea' }
-  ];
+  const  { categories }  = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
