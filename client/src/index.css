@@ -181,6 +181,17 @@ input:focus {
   align-items: center;
 }
 
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-row {
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 .flex-row {
   display: flex;
   flex-wrap: wrap;
@@ -197,6 +208,7 @@ input:focus {
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+  list-style-type: none;
 }
 
 .mx-2 {
@@ -244,6 +256,9 @@ input:focus {
 }
 
 @media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
   .content {
     flex-wrap: wrap;
   }
@@ -255,5 +270,11 @@ input:focus {
   }
   .card {
     width: 100%;
+  }
+  .detail {
+    align-items: center
+  }
+  .detail-row {
+    justify-content: center
   }
 }

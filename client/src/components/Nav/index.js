@@ -40,10 +40,9 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
+    <header className="flex-row px-1 navbar">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="dancing shoes">🩰</span>
           Dance Costume Inventory
         </Link>
       </h1>
