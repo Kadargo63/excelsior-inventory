@@ -77,10 +77,3 @@ const resolvers = {
 }
 //export resolvers
 module.exports = resolvers
-
-
-
-
-
-
-

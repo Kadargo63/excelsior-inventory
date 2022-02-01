@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
 :root {
   --primary: #76caf6;
-  --secondary: #8982ae;
+  --secondary: #8785c7;
   --tertiary: #989797;
   --light: white;
   --dark: black;
@@ -88,15 +90,17 @@ header a {
 }
 
 button {
-  font-size: 1rem;
+  font-size: 2rem;
   text-decoration: none;
-  padding: 0.25rem 1rem;
+  padding: .25rem 1rem;
   border-radius: .5rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 5px 5px;
   background-color: var(--secondary);
+  font-family: 'Knewave';
+  text-transform: capitalize;
 }
 
 button:hover {
@@ -137,10 +141,44 @@ input:focus {
 }
 
 .container {
-  width: 85%;
+  width: 95%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  width:40%;
+  justify-content: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 60%
+}
+
+.jumbotron {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.jumbotron img {
+  width:100%;
+  height:100%
+}
+
+.category-menu {
+  align-items: center;
 }
 
 .flex-row {
@@ -206,6 +244,15 @@ input:focus {
 }
 
 @media screen and (max-width: 768px) {
+  .content {
+    flex-wrap: wrap;
+  }
+  .left-column {
+    width: 100%
+  }
+  .right-column {
+    width: 100%
+  }
   .card {
     width: 100%;
   }
