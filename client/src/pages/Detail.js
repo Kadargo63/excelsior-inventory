@@ -23,6 +23,13 @@ function Detail() {
   const dispatch = useDispatch();
 
   const { id } = useParams();
+  //const {
+  //  image,
+  //  name,
+  //  _id,
+  //  size,
+  //  quantity
+  //} = item;
 
   const [currentProduct, setCurrentProduct] = useState({});
 
@@ -57,26 +64,31 @@ function Detail() {
     // }
   }, [products, data, loading, dispatch, id]);
 
-  const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === id);
-    if (itemInCart) {
-      dispatch({
-        type: UPDATE_CART_QUANTITY,
-        _id: id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-      });
-      // idbPromise('cart', 'put', {
-      //   ...itemInCart,
-      //   purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-      // });
-    } else {
-      dispatch({
-        type: ADD_TO_CART,
-        product: { ...currentProduct, purchaseQuantity: 1 },
-      });
-      // idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
-    }
-  };
+// const addToCart = () => {
+//   const itemInCart = cart.find((cartItem) => cartItem._id === id);
+//   if (itemInCart) {
+//     dispatch({
+//       type: UPDATE_CART_QUANTITY,
+//       _id: id,
+//       purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+//     });
+//     // idbPromise('cart', 'put', {
+//     //   ...itemInCart,
+//     //   purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+//     // });
+//   } else {
+//     dispatch({
+//       type: ADD_TO_CART,
+//       product: { ...currentProduct, purchaseQuantity: 1 },
+//     });
+//     // idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+//   }
+// };
+
+ // const increment = () => {
+ //   console.log(_id, quantity)
+ //       updateQuantity({ variables: { _id: _id, quantity: quantity + 1 } });
+ // };
 
   const removeFromCart = () => {
     dispatch({
@@ -97,9 +109,19 @@ function Detail() {
 
           <p>{currentProduct.description}</p>
 
+          <p> 
+            <img
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
+          </p>
           <p>
-            <strong>Size:</strong>${currentProduct.size}{' '}
-            <button onClick={addToCart}>Check Out </button>
+            <strong>Size:</strong>  {currentProduct.size}{' '} <br />
+            <strong>Quantity:</strong>  {currentProduct.quantity}{' '}
+          </p>
+          <p>
+            <button >Check In</button>
+            <button >Check Out</button>            
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
@@ -108,10 +130,7 @@ function Detail() {
             </button>
           </p>
 
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+
         </div>
       ) : null}
       {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
