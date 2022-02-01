@@ -86,7 +86,7 @@ import {
         return {
           ...state,
           currentCategory: action.currentCategory
-        }
+        };
   
       default:
         return state;
