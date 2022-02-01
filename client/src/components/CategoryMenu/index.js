@@ -16,28 +16,7 @@ function CategoryMenu() {
 
   const dispatch = useDispatch();
 
-  const  categories  = [
-    { name: 'Leotards',
-    _id
-    :
-    '61f6adab70bbb9579c0daeb3' },
-    { name: 'Lyrical Dresses',
-    _id
-    :
-    '61f6adab70bbb9579c0daeb4' },
-    { name: 'Tutu Dresses',
-    _id
-    :
-    '61f6adab70bbb9579c0daeb5' },
-    { name: 'Skirts/Tutus',
-    _id
-    :
-    '61f6adab70bbb9579c0daeb6' },
-    { name: 'Shoes',
-    _id
-    :
-    '61f6adab70bbb9579c0daeb7' }
-  ];
+  const  {categories}  = state
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
@@ -69,8 +48,7 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
+    <div className="category-menu">
       {categories.map((item) => (
         <button
           key={item._id}

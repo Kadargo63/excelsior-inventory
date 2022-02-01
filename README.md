@@ -2,12 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Logo with title image](./client/images/logo-with-title.png)
+![Logo with title image](./client/public/images/logo-with-title.png)
 
 ## Description
 
 #### This DESTINATION DANCE COSTUME INVENTORY app has been created for a client that has requested an inventory management system that allows her to quickly and easily access and locate costumes for her busy dance studio. She can add, edit, and delete the inventory as needed.
-![User Story](./client/images/user-story.png)
+![User Story](./client/public/images/user-story.png)
 
 ## Table of Contents
 * [Installation](#installation)
@@ -24,40 +24,42 @@ In order to install this repository, you will need to clone it and run npm init 
 ## Usage
 To use this app after cloning and initializing the dependencies, run npm start in the terminal to start it in your local browser. This app has also been deployed through Heroku. See the Deployment section below for the link.
 
-![npm start](./client/images/npm-start.png)
+![npm start](./client/public/images/npm-start.png)
 
 When the browser opens, you are greeted with the homepage.
 
-![homepage](./client/images/homepage.png)
+![homepage](./client/public/images/homepage.png)
 
-New users need to be added to be able to use the inventory management app.
+Users must login with their email and password.
 
-![add user](./client/images/add-user.png)
+![login](./client/public/images/login.png)
 
-Returning users can login with their email and password.
+Once logged in, you can choose the items that you would like to view and see the item name, size, and quantity.
 
-![login](./client/images/login.png)
+![homepage](./client/public/images/homepage.png)
 
-Once logged in, you can choose the items that you would like to view and see the item name, description, location, size, and quantity.
+You can add a new user to give access to an assistant, when needed.
 
-![homepage](./client/images/homepage.png)
+![add user](./client/public/images/add-user.png)
 
-This app allows the user to add, edit, and delete items as needed. 
+This app allows the user to check items back in to the inventory and check out items that are deducted from the inventory count.
 
-![add item](./client/images/add-item.png)
+![check in items](./client/public/images/check-in.png)
 
-![edit item](./client/images/edit-item.png)
+![check out items](./client/public/images/check-out.png)
 
-![delete item](./client/images/delete-item.png)
+The user can also delete items from the inventory, as needed.
+
+![delete items](./client/public/images/delete-item.png)
 
 This site is also mobile responsive!
 
-![mobile responsive](./client/images/responsive.png)
+![mobile responsive](./client/public/images/responsive.png)
 
 ## Future Development
 We are currently working on the ability for the client to use QR Codes to track the bins the items are located in.
 
-![QR Code option](./client/images/qr-codes.png)
+![QR Code option](./client/public/images/qr-code-revised.png)
 
 ## License
 The license for this project is the MIT.
@@ -80,23 +82,23 @@ This app is deployed on Heroku at: https://<add link here>.herokuapp.com/
 *If you have any questions, please reach out to us at*
 
 ### _Paul Frueh_ 
-![Paul Frueh Headshot](./client/images/paul-frueh-headshot.png)
+![Paul Frueh Headshot](./client/public/images/paul-frueh-headshot.png)
 
 Paul's Github: [@pfrueh1](https://github.com/pfrueh1/)
 
 ### _Robert Isaacs_ 
-![Robert Isaacs Headshot](./client/images/robert-isaacs-headshot.png)
+![Robert Isaacs Headshot](./client/public/images/robert-isaacs-headshot.png)
 
 Robert's Github: [@kadargo63](https://github.com/Kardargo63)
 
 ### _Maria Sori_ 
-![Maria Sori Headshot](./client/images/maria-sori-headshot.png)
+![Maria Sori Headshot](./client/public/images/maria-sori-headshot.png)
 
 Maria's Github: [@mariasori](https://github.com/mariasori)
 
 ### _Jamie Williams_ 
 
-![Jamie Williams Headshot](./client/images/jamie-williams-headshot.png)
+![Jamie Williams Headshot](./client/public/images/jamie-williams-headshot.png)
 
 Jamie's GitHub: [@jamwil1226](https://github.com/jamwil1226/)
 
