@@ -71,8 +71,8 @@ const Cart = () => {
       <div className="cart-closed" 
       onClick={toggleCart}
       >
-        <span role="img" aria-label="trash">
-          🛒
+        <span role="img" aria-label="files">
+          🗃
         </span>
       </div>
     );
