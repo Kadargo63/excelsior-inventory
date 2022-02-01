@@ -2,10 +2,9 @@ import React from "react";
 
 function Jumbotron({ children }) {
   return (
-    <div
-      style={{ height: 560, clear: "both", paddingTop: 120, textAlign: "center" }}
-    >
+    <div className='jumbotron'  >
       {children}
+      <img src='https://raw.githubusercontent.com/Kadargo63/excelsior-inventory/develop/client/public/images/logo-with-title.png' alt='Destination Dance Logo' />
     </div>
   );
 }
