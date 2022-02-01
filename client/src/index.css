@@ -150,13 +150,14 @@ input:focus {
 .content {
   display: flex;
   flex-direction: row;
+  align-items: top;
 }
 
 .left-column {
   display: flex;
   flex-direction: column;
   width:40%;
-  justify-content: center;
+  align-items: top;
 }
 
 .right-column {
