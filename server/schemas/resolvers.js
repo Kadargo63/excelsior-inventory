@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Product, Location, User } = require('../models');
+const { Product, Category, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 //create resolvers
@@ -59,6 +59,12 @@ const resolvers = {
             const token = signToken(user);
       
             return { token, user };
+        },
+
+        //modify quantity
+        updateQuantity: async (parent, {_id, quantity}) => {
+          const product = await Product.findByIdAndUpdate(_id, {quantity: quantity})
+          return product;
         },
 
         // //add item
