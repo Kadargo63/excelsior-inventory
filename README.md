@@ -54,7 +54,7 @@ The user can also delete items from the inventory, as needed.
 
 This site is also mobile responsive!
 
-![mobile responsive](./client/public/images/responsive.png)
+![mobile responsive](./client/public/images/mobile-responsive.png)
 
 ## Future Development
 We are currently working on the ability for the client to use QR Codes to track the bins the items are located in.
