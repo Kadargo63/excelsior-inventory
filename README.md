@@ -40,17 +40,11 @@ Once logged in, you can choose the items that you would like to view and see the
 
 You can add a new user to give access to an assistant, when needed.
 
-![add user](./client/public/images/add-user.png)
+![add user](./client/public/images/add-approved-user.png)
 
-This app allows the user to check items back in to the inventory and check out items that are deducted from the inventory count.
+This app allows the user to check items back in to the inventory and check out items that are deducted from the inventory count and delete items that will no longer be in the inventory.
 
-![check in items](./client/public/images/check-in.png)
-
-![check out items](./client/public/images/check-out.png)
-
-The user can also delete items from the inventory, as needed.
-
-![delete items](./client/public/images/delete-item.png)
+![edit inventory](./client/public/images/edit-inventory.png)
 
 This site is also mobile responsive!
 
@@ -70,7 +64,7 @@ Copyright © 2021
 ## Demo & Deployment
 Watch this demo to see the DESTINATION DANCE COSTUME INVENTORY app in action!
 
-https://watch.screencastify.com/<add link here>
+https://watch.screencastify.com/v/PelI9w70GDVIbdBRRkUT
 
 This app is deployed on Heroku at: https://enigmatic-reaches-91746.herokuapp.com/
 
