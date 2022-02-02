@@ -24,7 +24,9 @@ const typeDefs = gql`
   }
   type User {
     _id: ID
-    name: String
+    firstName: String
+    lastName: String
+    email: String
   }
   type Checkout {
     session: ID
@@ -40,8 +42,10 @@ const typeDefs = gql`
     user: User
   }
   type Mutation {
-    addUser(name: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateQuantity(quantity: Int!, _id: ID!): Product
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    deleteItem(_id: ID!): Product
     login(email: String!, password: String!): Auth
   }
 `;

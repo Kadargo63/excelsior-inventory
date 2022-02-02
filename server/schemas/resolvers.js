@@ -52,6 +52,11 @@ const resolvers = {
           return product;
         },
 
+        deleteItem: async (parent, {_id}) => {
+          const product = await Product.findByIdAndDelete(_id)
+          return product;
+        },
+
         // //add item
         // addProduct: async (parent, args) => {
         //   const item = await Product.create(args);
@@ -67,6 +72,15 @@ const resolvers = {
         //     const decrement = Math.abs(quantity) * -1;
         //     return await OnHands.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
         // },
+
+        updateUser: async (parent, args, context) => {
+          if (context.user) {
+            return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+          }
+    
+          throw new AuthenticationError('Not logged in');
+        },
+
         //login
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });

@@ -72,7 +72,9 @@ Watch this demo to see the DESTINATION DANCE COSTUME INVENTORY app in action!
 
 https://watch.screencastify.com/<add link here>
 
-This app is deployed on Heroku at: https://<add link here>.herokuapp.com/
+This app is deployed on Heroku at: https://enigmatic-reaches-91746.herokuapp.com/
+
+![Heroku](./client/public/images/heroku.png)
 
 
 ### We hope you enjoy using this DESTINATION DANCE COSTUME INVENTORY app! We welcome all contributions and feedback!
