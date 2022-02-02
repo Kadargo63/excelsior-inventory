@@ -63,4 +63,16 @@ export const UPDATE_QUANTITY = gql`
       quantity
     }
   }
+`;
+
+export const DELETE_ITEM = gql`
+mutation deleteItem(
+  $_id: ID!
+){
+  deleteItem(
+    _id: $_id
+  ){
+    _id
+  }
+}
 `

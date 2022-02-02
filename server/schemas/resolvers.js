@@ -52,6 +52,11 @@ const resolvers = {
           return product;
         },
 
+        deleteItem: async (parent, {_id}) => {
+          const product = await Product.findByIdAndDelete(_id)
+          return product;
+        },
+
         // //add item
         // addProduct: async (parent, args) => {
         //   const item = await Product.create(args);
