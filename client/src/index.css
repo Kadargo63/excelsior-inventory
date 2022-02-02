@@ -142,7 +142,6 @@ input:focus {
 
 .container {
   width: 95%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
