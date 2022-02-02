@@ -5,9 +5,9 @@ import { useQuery } from '@apollo/client';
 // import Cart from '../components/Cart';
 // import { useStoreContext } from '../utils/GlobalState';
 import {
-  REMOVE_FROM_CART,
-  UPDATE_CART_QUANTITY,
-  ADD_TO_CART,
+  // REMOVE_FROM_CART,
+  // UPDATE_CART_QUANTITY,
+  // ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
@@ -90,14 +90,14 @@ function Detail() {
  //       updateQuantity({ variables: { _id: _id, quantity: quantity + 1 } });
  // };
 
-  const removeFromCart = () => {
-    dispatch({
-      type: REMOVE_FROM_CART,
-      _id: currentProduct._id,
-    });
+  // const removeFromCart = () => {
+  //   dispatch({
+  //     type: REMOVE_FROM_CART,
+  //     _id: currentProduct._id,
+  // //   });
 
-    // idbPromise('cart', 'delete', { ...currentProduct });
-  };
+  //   // idbPromise('cart', 'delete', { ...currentProduct });
+  // };
 
   return (
     <>
