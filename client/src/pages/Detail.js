@@ -9,7 +9,7 @@ import {
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { useMutation } from '@apollo/client';
-import { UPDATE_QUANTITY } from "../utils/mutations";
+import { UPDATE_QUANTITY, DELETE_ITEM } from "../utils/mutations";
 import { useDispatch, useSelector } from 'react-redux';
 
 function Detail() {
@@ -57,6 +57,7 @@ function Detail() {
   }, [products, data, loading, dispatch, id]);
 
   const [updateQuantity, {data2}] = useMutation(UPDATE_QUANTITY)
+  const [deleteItem, {data3}] = useMutation(DELETE_ITEM)
 
   const {
     image,
@@ -67,14 +68,20 @@ function Detail() {
   } = currentProduct;
 const [currentQuantity, setCurrentQuantity] = useState(quantity)
   async function increment ()  {
-    const {_id, quantity} = currentProduct;
-    console.log(currentQuantity, quantity, 'before')
       const updated = await updateQuantity({ variables: { _id, quantity: quantity + 1 } });
-        setCurrentQuantity(quantity)
-        console.log(currentQuantity, quantity, 'after', updated)
+        setCurrentQuantity(updated.data.updateQuantity.quantity)
+        window.location.reload()
+
    };
-   const decrement = () => {};
-   const deleteItem = () => {}
+   async function decrement () {
+    const updated = await updateQuantity({ variables: { _id, quantity: quantity - 1 } });
+    setCurrentQuantity(updated.data.updateQuantity.quantity)
+    window.location.reload()
+   };
+   async function dbDelete () {
+    const updated = await deleteItem({ variables: { _id} });
+    window.location.assign('/')
+   }
   ;
 
   return (
@@ -106,8 +113,8 @@ const [currentQuantity, setCurrentQuantity] = useState(quantity)
             <button onClick={increment}>Check In</button>
             <button onClick={decrement}>Check Out</button>            
             <button
-            //disabled={!cart.find((p) => p._id === currentProduct._id)}
-            //onClick={removeFromCart}
+            
+            onClick={dbDelete}
             >
               Delete
             </button>
