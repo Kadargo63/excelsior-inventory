@@ -43,7 +43,7 @@ function Nav() {
     <header className="flex-row px-1 navbar">
       <h1>
         <Link to="/">
-          Dance Costume Inventory
+         🩰Dance Costume Inventory
         </Link>
       </h1>
 
