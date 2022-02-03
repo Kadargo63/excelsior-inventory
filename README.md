@@ -9,6 +9,22 @@
 #### This DESTINATION DANCE COSTUME INVENTORY app has been created for a client that has requested an inventory management system that allows her to quickly and easily access and locate costumes for her busy dance studio. She can add, edit, and delete the inventory as needed.
 ![User Story](./client/public/images/user-story.png)
 
+## Technologies Used
+* HTML
+* CSS
+* JavaScript
+* React.js
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* Apollo-Client 
+* JSON Web Token
+* GraphQL
+* Bcrypt
+* Redux
+* Heroku
+
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
