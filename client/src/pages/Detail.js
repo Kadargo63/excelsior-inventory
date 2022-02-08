@@ -56,14 +56,11 @@ function Detail() {
     // }
   }, [products, data, loading, dispatch, id]);
 
-  const [updateQuantity, {data2}] = useMutation(UPDATE_QUANTITY)
-  const [deleteItem, {data3}] = useMutation(DELETE_ITEM)
+  const [updateQuantity] = useMutation(UPDATE_QUANTITY)
+  const [deleteItem] = useMutation(DELETE_ITEM)
 
   const {
-    image,
-    name,
     _id,
-    size,
     quantity
   } = currentProduct;
 const [currentQuantity, setCurrentQuantity] = useState(quantity)
