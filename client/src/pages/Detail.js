@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import {
-  // REMOVE_FROM_CART,
-  // UPDATE_CART_QUANTITY,
-  // ADD_TO_CART,
-  UPDATE_PRODUCTS,
-} from '../utils/actions';
+import { UPDATE_PRODUCTS } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { useMutation } from '@apollo/client';
 import { UPDATE_QUANTITY, DELETE_ITEM } from "../utils/mutations";
@@ -40,20 +35,7 @@ function Detail() {
         type: UPDATE_PRODUCTS,
         products: data.products,
       });
-
-      // data.products.forEach((product) => {
-      //   idbPromise('products', 'put', product);
-      // });
      }
-    // get cache from idb
-    // else if (!loading) {
-    //   idbPromise('products', 'get').then((indexedProducts) => {
-    //     dispatch({
-    //       type: UPDATE_PRODUCTS,
-    //       products: indexedProducts,
-    //     });
-    //   });
-    // }
   }, [products, data, loading, dispatch, id]);
 
   const [updateQuantity] = useMutation(UPDATE_QUANTITY)

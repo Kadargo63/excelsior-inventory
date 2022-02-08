@@ -57,22 +57,6 @@ const resolvers = {
           return product;
         },
 
-        // //add item
-        // addProduct: async (parent, args) => {
-        //   const item = await Product.create(args);
-        //   return { item };
-        // },
-        //add location
-        // addLocation: async (parent, args) => {
-        //   const location = await Location.create(args);
-        //   return { location };
-        // },
-        //update on hand
-        // updateOnHands: async (parent, { _id, quantity }) => {
-        //     const decrement = Math.abs(quantity) * -1;
-        //     return await OnHands.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
-        // },
-
         updateUser: async (parent, args, context) => {
           if (context.user) {
             return await User.findByIdAndUpdate(context.user._id, args, { new: true });
